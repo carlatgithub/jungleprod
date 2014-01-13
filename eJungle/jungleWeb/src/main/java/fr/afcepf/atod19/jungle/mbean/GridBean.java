@@ -25,7 +25,7 @@ public class GridBean implements Serializable {
 	   private IGestionCatalogue serviceGestionCatalogue;
 	   private int qteCde;
 	   private static final long serialVersionUID = 1L;
-       private List<Livre> livres;  
+       private List<Livre> livres;
 	   private Livre selectedLivre;
 	   private List<LigneCommande> monpanier;
 	   
@@ -91,5 +91,15 @@ public class GridBean implements Serializable {
 			lCde.setLivre(selectedLivre);
 			lCde.setQuantite(qteCde);
 			monpanier.add(lCde);
+		}
+		
+		
+		public String showDetails(){
+			
+			String numIsbn = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("livreSelected");
+			selectedLivre = new Livre();
+			selectedLivre = serviceGestionCatalogue.livreSelonISBN(numIsbn);
+			
+			return "detailLivre.xhtml?faces-redirect=true";
 		}
 	}  

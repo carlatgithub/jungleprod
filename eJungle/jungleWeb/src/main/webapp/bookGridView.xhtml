@@ -13,9 +13,12 @@
 			<div class="row">
 			<c:forEach items="#{gridBean.livres}" var="livre">
 				  <div class="col-xs-6 col-md-3">
-				    <a href="#" class="thumbnail">
+				
+				   <h:commandLink action="#{gridBean.showDetails}" >
+					   <f:param name="livreSelected" value="#{livre.numeroISBN}" />
 				      <img  src="images/livre/#{livre.numeroISBN}.jpg" alt="..."/>
-				    </a>
+				    </h:commandLink>
+				    
 				     <div class="input-group" style="margin-bottom: 20px;">
 				    <span class="input-group-addon">
 						<p:commandLink value="Ajouter au panier" actionListener="#{gridBean.ajouter}" 
