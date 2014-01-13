@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/templates/common.xhtml">
+			<ui:define name="pageTitle">login</ui:define>
+			<ui:define name="pageHeader">connexion utilisateur</ui:define>
+			<ui:define name="body">
+			<h:messages globalOnly="true"  styleClass="error"/>
+			   <form jsfc="h:form" id="Form">
+				 <div class="row">
+				   <div class="large-12 columns">
+					<label>username:</label>
+					<h:inputText value="#{loginBean.username}"/> <br/>
+					</div>
+					</div>
+					<div class="row">
+					<div class="large-12 columns">
+						<label>password: </label>
+					    <h:inputText value="#{loginBean.password}"/> <br/>
+					</div>
+					</div>
+					<div class="row">
+					<div class="large-4 columns">
+					 <h:commandButton styleClass="button" value="login" action="#{loginBean.login}"/>
+					 </div>
+				  </div>
+			   </form>
+			</ui:define>
+	</ui:composition>
+
+</html>

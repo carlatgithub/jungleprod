@@ -1,0 +1,9 @@
+*~
+.DS_Store
+*.class
+# maven generated directory
+target/
+
+# log files
+mylog.txt
+mylog.txt.*

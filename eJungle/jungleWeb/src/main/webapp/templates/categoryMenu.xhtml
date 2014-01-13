@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:form id="frmCatMenu">
+	<h3>LIVRES</h3>
+
+	<p:growl id="messages" />
+
+	<h3>Default SlideMenu</h3>
+
+		<p:slideMenu style="width:180px">
+			<c:forEach items="#{categoryMenuBean.categories}" var="cat">
+			<p:menuitem  actionListener="#{categoryMenuBean.changeCategory}" id="#{cat.nom}" value="#{cat.nom}" ajax="false">
+			<f:param value="#{cat.id}" name="categorieChoisie"/>
+			</p:menuitem>
+			</c:forEach>
+			 <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>
+	</p:slideMenu>
+
+</h:form>
+</html>
